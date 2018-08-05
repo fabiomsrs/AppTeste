@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "materialize.min.css" %}">
+    <link rel="stylesheet" href="{% static "main.css" %}">    
+	<title>AppTeste</title>
+</head>
+<body>
+	<nav>        
+        <div class="nav-wrapper main-nav"> 
+        <ul class="hide-on-med-and-down">
+           
+            <li><a href="{% url 'core:listar_produtos' %}">AppTeste</a></li>
+            <li><a href="{% url 'core:criar_produtos' %}">cadastrar produto</a></li>
+
+        </ul>
+        </div>
+	</nav>
+
+	<main>
+		<div class="row main-section">
+            
+            <div class="col s8 push-s2">
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+	</main>
+
+	<footer id="footer" class="page-footer base-footer">
+        <div class="footer-copyright">
+            <div class="container">
+            © 2018 Todos os direitos Reservados            
+            </div>
+        </div>
+    </footer>
+
+<script src="{% static "materialize.min.js" %}"></script>
+<script src="{% static "jquery-3.2.1.min.js" %}"></script>
+</body>
+</html>
