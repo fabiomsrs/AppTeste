@@ -10,7 +10,9 @@
 		  Categoria: {{produto.categoria}}	<br/>	  
 		  Data de fabricação: {{produto.data_criacao}} <br/>
 		  Fabrica: {{produto.fabrica}} <br/>		
-          <p>Descrição: {{produto.descricao}}</p>
+          <p>Descrição: {{produto.descricao}}</p>        
+          <a href="{% url 'core:atualizar_produto' id=produto.id%}">atualizar</a>
+          <a href="{% url 'core:deletar_produto' id=produto.id %}">deletar</a>
         </div>
     </div>
     {% endfor %}
